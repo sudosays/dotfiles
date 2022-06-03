@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ -d /sys/class/power_supply/BAT0 ]; then
+
+    pushd /sys/class/power_supply/BAT0 > /dev/null
+
+    PRESENT=$(cat ./present)
+
+    if [ $PRESENT ];
+    then
+        STATUS=$(cat ./status)
+
+        CHARGE_NOW=$(cat ./charge_now)
+        MAX_CHARGE=$(cat ./charge_full)
+        
+        PERCENT=$(python -c "print('%.0f%%' % (($CHARGE_NOW/$MAX_CHARGE)*100))")
+    
+        echo "🗲 $PERCENT ($STATUS) "
+    fi
+
+    popd  > /dev/null
+fi
