@@ -31,3 +31,5 @@ emacs --daemon &
 picom -b
 
 guake &
+
+plank &

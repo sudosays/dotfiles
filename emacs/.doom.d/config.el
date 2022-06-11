@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :name "Inconsolata" :size 20))
+(setq doom-font (font-spec :family "monospace" :name "Iosevka Term Extended" :size 16))
 ;;doom-variable-pitch-font (font-spec :family "serif" :name "Times New Roman"  :size 16))
 
 
@@ -34,7 +34,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-;;(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:

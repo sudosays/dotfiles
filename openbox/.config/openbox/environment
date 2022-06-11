@@ -10,3 +10,5 @@
 # http://www.google.com/search?q=how+to+set+keyboard+layout+xorg
 
 eval $(ssh-agent -s)
+
+xrdb ~/.Xresources
