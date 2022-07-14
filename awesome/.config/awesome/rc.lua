@@ -46,7 +46,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- old: beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "zenburn")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "obsidian")
 beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
@@ -187,7 +187,8 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        spacing = 15
     }
 
     -- Create a tasklist widget

@@ -1,40 +1,62 @@
--------------------------------
---  "Zenburn" awesome theme  --
---    By Adrian C. (anrxc)   --
--------------------------------
+--------------------------------------
+--  "Obsidian" awesome theme        --
+--  By Julius Stopforth (sudosays)  --
+--                                  --
+--  derived from...                 --
+--                                  --
+--  "Zenburn" awesome theme         --
+--    By Adrian C. (anrxc)          --
+--------------------------------------
 
 local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = themes_path .. "zenburn/zenburn-background.png"
+local wallpaper_path = string.format("%s/.config/awesome/themes/obsidian/background.png", os.getenv("HOME"))
+theme.wallpaper = wallpaper_path
 -- }}}
 
 -- {{{ Styles
 theme.font      = "sans 12"
 
 -- {{{ Colors
-theme.fg_normal  = "#DCDCCC"
-theme.fg_focus   = "#F0DFAF"
-theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#1E2320"
-theme.bg_urgent  = "#3F3F3F"
+--theme.fg_normal  = "#DCDCCC"
+--theme.fg_focus   = "#F0DFAF"
+--theme.fg_urgent  = "#CC9393"
+--theme.bg_normal  = "#3F3F3F"
+--theme.bg_focus   = "#1E2320"
+--theme.bg_urgent  = "#3F3F3F"
+--theme.bg_systray = theme.bg_normal
+--
+-- Rich black #121619
+-- Slate gray #738290
+-- Platinum #EAEAEA
+-- Cobalt blue #164CA2
+-- Burnt umber #DB5461
+--
+theme.fg_normal  = "#EAEAEA"
+theme.fg_focus   = "#FFFFFF"
+theme.fg_urgent  = "#121619"
+theme.bg_normal  = "#121619"
+theme.bg_focus   = "#738290"
+theme.bg_urgent  = "#DB5461"
 theme.bg_systray = theme.bg_normal
+
+
 -- }}}
 
 -- {{{ Borders
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(2)
-theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#6F6F6F"
-theme.border_marked = "#CC9393"
+theme.border_normal = "#121619"
+theme.border_focus  = "#738290"
+theme.border_marked = "#DB5461"
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.titlebar_bg_focus  = "#121619"
+theme.titlebar_bg_normal = "#121619"
 -- }}}
 
 -- There are other variable sets
@@ -55,11 +77,11 @@ theme.titlebar_bg_normal = "#3F3F3F"
 --theme.fg_center_widget = "#88A175"
 --theme.fg_end_widget    = "#FF5656"
 --theme.bg_widget        = "#494B4F"
---theme.border_widget    = "#3F3F3F"
+--theme.border_widget    = "#121619"
 -- }}}
 
 -- {{{ Mouse finder
-theme.mouse_finder_color = "#CC9393"
+theme.mouse_finder_color = "#DB5461"
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
 -- }}}
 
@@ -79,7 +101,9 @@ theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
+
+local icon_path = string.format("%s/.config/awesome/themes/obsidian/%s.png", os.getenv("HOME"), "biohazard")
+theme.awesome_icon           = icon_path
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
 -- }}}
 
