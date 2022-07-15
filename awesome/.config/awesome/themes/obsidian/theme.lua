@@ -101,29 +101,29 @@ theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 -- }}}
 
 -- {{{ Misc
-
 local icon_path = string.format("%s/.config/awesome/themes/obsidian/%s.png", os.getenv("HOME"), "biohazard")
 theme.awesome_icon           = icon_path
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile       = themes_path .. "zenburn/layouts/tile.png"
-theme.layout_tileleft   = themes_path .. "zenburn/layouts/tileleft.png"
-theme.layout_tilebottom = themes_path .. "zenburn/layouts/tilebottom.png"
-theme.layout_tiletop    = themes_path .. "zenburn/layouts/tiletop.png"
-theme.layout_fairv      = themes_path .. "zenburn/layouts/fairv.png"
-theme.layout_fairh      = themes_path .. "zenburn/layouts/fairh.png"
-theme.layout_spiral     = themes_path .. "zenburn/layouts/spiral.png"
-theme.layout_dwindle    = themes_path .. "zenburn/layouts/dwindle.png"
-theme.layout_max        = themes_path .. "zenburn/layouts/max.png"
-theme.layout_fullscreen = themes_path .. "zenburn/layouts/fullscreen.png"
-theme.layout_magnifier  = themes_path .. "zenburn/layouts/magnifier.png"
-theme.layout_floating   = themes_path .. "zenburn/layouts/floating.png"
-theme.layout_cornernw   = themes_path .. "zenburn/layouts/cornernw.png"
-theme.layout_cornerne   = themes_path .. "zenburn/layouts/cornerne.png"
-theme.layout_cornersw   = themes_path .. "zenburn/layouts/cornersw.png"
-theme.layout_cornerse   = themes_path .. "zenburn/layouts/cornerse.png"
+local local_theme_path = string.format("%s/.config/awesome/themes/obsidian/", os.getenv("HOME"))
+theme.layout_tile       = local_theme_path .. "layouts/tile.png"
+theme.layout_tileleft   = local_theme_path .. "layouts/tileleft.png"
+theme.layout_tilebottom = local_theme_path .. "layouts/tilebottom.png"
+theme.layout_tiletop    = local_theme_path .. "layouts/tiletop.png"
+theme.layout_fairv      = local_theme_path .. "layouts/fairv.png"
+theme.layout_fairh      = local_theme_path .. "layouts/fairh.png"
+theme.layout_spiral     = local_theme_path .. "layouts/spiral.png"
+theme.layout_dwindle    = local_theme_path .. "layouts/dwindle.png"
+theme.layout_max        = local_theme_path .. "layouts/max.png"
+theme.layout_fullscreen = local_theme_path .. "layouts/fullscreen.png"
+theme.layout_magnifier  = local_theme_path .. "layouts/magnifier.png"
+theme.layout_floating   = local_theme_path .. "layouts/floating.png"
+theme.layout_cornernw   = local_theme_path .. "layouts/cornernw.png"
+theme.layout_cornerne   = local_theme_path .. "layouts/cornerne.png"
+theme.layout_cornersw   = local_theme_path .. "layouts/cornersw.png"
+theme.layout_cornerse   = local_theme_path .. "layouts/cornerse.png"
 -- }}}
 
 -- {{{ Titlebar
@@ -154,6 +154,8 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "zenburn/titleb
 theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
+
+theme.notification_max_height = dpi(100)
 
 return theme
 
