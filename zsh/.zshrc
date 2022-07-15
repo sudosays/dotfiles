@@ -21,7 +21,8 @@ colors
 
 PROMPT="%{$fg_bold[cyan]%}%n@%m%{$reset_color%}:%{$fg[yellow]%}%2~%{$reset_color%}"$'\n'"φ> "
 alias ls="ls --color=auto"
-alias ec=emacsclient
+alias eco="emacsclient -n"
 alias zotero="zotero -P"
 # The following is to standardise the terminal used when doing ssh
-alias ssh="TERM=xterm-256color ssh" 
+alias ssh="TERM=xterm-256color ssh"
+# export PATH=$PATH:$(go env GOPATH)/bin
