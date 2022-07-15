@@ -14,3 +14,12 @@ when the dofiles folder is not sitting directly under the home directory.
 + [ ] Recipes for programs to install
 + [ ] Branched configs for multiple setups
 + [ ] MultiOS setups
+
+## How should .xprofile, .xsession, and .xinitrc be used?
+
+In my case I use `.xprofile` for environment setup persistent to X-sessions, and
+`.xsession` to run background processes for the WM.
+
+For other WMs it might make sense to have special files for `.xprofile`,
+`.xsession`, etc. Those would go in the directory of the WM being riced and
+stow'd with it.
