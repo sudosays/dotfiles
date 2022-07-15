@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/tomorrow-night-bright.yml
+  - ~/.config/alacritty/themes/xterm-soft.yml
 
 font:
   normal:

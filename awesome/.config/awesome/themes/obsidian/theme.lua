@@ -47,7 +47,7 @@ theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
-theme.useless_gap   = dpi(0)
+theme.useless_gap   = dpi(3)
 theme.border_width  = dpi(2)
 theme.border_normal = "#121619"
 theme.border_focus  = "#738290"
@@ -155,7 +155,11 @@ theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titleb
 -- }}}
 -- }}}
 
-theme.notification_max_height = dpi(100)
+--- {{{ Notification theming
+theme.notification_max_height = dpi(75)
+--- }}}
+
+theme.gap_single_client = false
 
 return theme
 
