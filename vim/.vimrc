@@ -1,5 +1,6 @@
 " jjstopforths bare vimrc file
 
+
 execute pathogen#infect()
 
 autocmd! User GoyoEnter Limelight
@@ -85,3 +86,5 @@ nnoremap <leader>wd :q<CR>
 nnoremap <leader><leader> <Esc>:
 inoremap <leader>jj <Esc>
 nnoremap <leader>ff :NERDTreeToggle<CR>
+
+set title
