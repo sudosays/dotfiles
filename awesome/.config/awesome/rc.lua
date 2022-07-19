@@ -214,6 +214,12 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
+            awful.widget.watch('zsh -c "network-status"', 10),
+            wibox.widget.textbox(' ≋ '),
+            awful.widget.watch('zsh -c "cputemp-status"', 30),
+            wibox.widget.textbox(' ≋ '),
+            awful.widget.watch('zsh -c "diskusage-status"', 30),
+            wibox.widget.textbox(' ≋ '),
             mytextclock,
             wibox.widget.systray(),
             s.mylayoutbox,

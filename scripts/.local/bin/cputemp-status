@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+temp = -1
+
+with open("/sys/class/thermal/thermal_zone0/temp", "r") as tempfile:
+    raw = tempfile.read()
+    temp = int(raw)
+
+print("CPU temp is: {temp:.1f}°C".format(temp=(temp/1000)))
