@@ -65,6 +65,10 @@
       :localleader
       :desc "Run TeX commands" "b" #'TeX-command-run-all)
 
+(map! :map TeX-mode-map
+      :localleader
+      :desc "Clean generated TeX files" "C" #'TeX-clean)
+
 (defun find-TeX-master (depth dir)
 (let ((main-file (nth 0 (directory-files dir t "\\.latexmain$"))))
         (if main-file
