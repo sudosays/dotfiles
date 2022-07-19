@@ -20,6 +20,8 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "monospace" :name "Iosevka Term Extended" :size 16))
+(setq doom-big-font (font-spec :family "monospace" :name "Iosevka Term Extended" :size 20))
+(setq doom-variable-pitch-font (font-spec :family "monospace" :name "Iosevka Term Extended" :size 20))
 ;;doom-variable-pitch-font (font-spec :family "serif" :name "Times New Roman"  :size 16))
 
 
