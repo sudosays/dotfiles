@@ -1,22 +1,14 @@
-#!/bin/sh
+#!/usr/bin/python
 
-if [ -d /sys/class/power_supply/BAT0 ]; then
+import os
 
-    pushd /sys/class/power_supply/BAT0 > /dev/null
+battery_dir = '/sys/class/power_supply/BAT0'
 
-    PRESENT=$(cat ./present)
-
-    if [ $PRESENT ];
-    then
-        STATUS=$(cat ./status)
-
-        CHARGE_NOW=$(cat ./charge_now)
-        MAX_CHARGE=$(cat ./charge_full)
-        
-        PERCENT=$(python -c "print('%.0f%%' % (($CHARGE_NOW/$MAX_CHARGE)*100))")
-    
-        echo "🗲 $PERCENT ($STATUS) "
-    fi
-
-    popd  > /dev/null
-fi
+if os.path.exists(battery_dir):
+    os.chdir(battery_dir)
+    present = (int(open("present","r").read()) > 0)
+    if present:
+        status = open("status", "r").read().strip()
+        charge = int(open("charge_now","r").read())
+        max_charge = int(open("charge_full","r").read())
+        print("{:.0f}% ({})".format((charge/max_charge)*100, status))
