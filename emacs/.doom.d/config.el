@@ -113,3 +113,6 @@
 
 (map! :map cdlatex-mode-map
     :i "TAB" #'cdlatex-tab)
+
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
