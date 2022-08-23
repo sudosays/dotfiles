@@ -9,4 +9,5 @@ run() {
 
 run "redshift-gtk"
 run "picom"
+run "xscreensaver --no-splash"
 
