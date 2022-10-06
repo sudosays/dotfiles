@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if  pid=$(pgrep emacs)  
+then
+    echo "Emacs already running with PID $pid"
+else
+    emacs --daemon &
+fi
