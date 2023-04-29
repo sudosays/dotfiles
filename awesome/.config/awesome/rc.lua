@@ -45,9 +45,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- old: beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "obsidian")
-beautiful.init(theme_path)
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -64,14 +63,14 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
@@ -171,7 +170,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1: main", "2: web", "3: aux", "4", "5", "6", "7: ref", "8: chat", "9: music" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -187,8 +186,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons,
-        spacing = 15
+        buttons = taglist_buttons
     }
 
     -- Create a tasklist widget
@@ -199,7 +197,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, type = "dock" })
+    s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -213,19 +211,9 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            --mykeyboardlayout,
-            awful.widget.watch('zsh -c "battery-status"', 10),
-            wibox.widget.textbox(' ≋ '),
-            awful.widget.watch('zsh -c "volume-status"', 10),
-            wibox.widget.textbox(' ≋ '),
-            awful.widget.watch('zsh -c "network-status"', 10),
-            wibox.widget.textbox(' ≋ '),
-            awful.widget.watch('zsh -c "cputemp-status"', 30),
-            wibox.widget.textbox(' ≋ '),
-            awful.widget.watch('zsh -c "diskusage-status"', 30),
-            wibox.widget.textbox(' ≋ '),
-            mytextclock,
+            mykeyboardlayout,
             wibox.widget.systray(),
+            mytextclock,
             s.mylayoutbox,
         },
     }
@@ -503,9 +491,8 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+      }, properties = { titlebars_enabled = true }
     },
-
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
@@ -576,5 +563,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
-awful.spawn.with_shell("~/.config/awesome/autostart.sh")
