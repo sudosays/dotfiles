@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/campbell.yml
+  - ~/.config/alacritty/themes/zenburn.yml
 
 
 font:
@@ -11,5 +11,4 @@ window:
   padding:
     x: 5
     y: 5
-  opacity: 0.95
   dynamic_title: true
